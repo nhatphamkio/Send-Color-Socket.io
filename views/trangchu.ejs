@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script>
+        // on collection
+        var socket = io("localhost:3000");
+        $(document).ready(function(){
+            $("#do")
+        });
+    </script>
+    <title>Color Change Socket IO</title>
+    <style>
+        #do,#xanh,#vang{
+            width: 30px;
+            height:30px;
+            border-radius: 50%;
+        }
+        #do{
+            background: red;
+        }
+        #xanh{
+            background: blue;
+        }
+        #vang{
+            background: yellow;
+        }
+
+    </style>
+</head>
+<body bgcolor="pink">
+    <dir id="do"></dir>
+    <dir id="xanh"></dir>
+    <dir id="vang"></di
