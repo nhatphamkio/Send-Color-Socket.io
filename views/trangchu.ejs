@@ -7,9 +7,20 @@
     <script src="socket.io/socket.io.js"></script>
     <script>
         // on collection
-        var socket = io("localhost:3000");
+        var socket = io("localhost:8001");
+        socket.on("Server-send-color",function(data){
+            $("body").attr("bgColor",data);
+        });
         $(document).ready(function(){
-            $("#do")
+            $("#do").click(function(){
+                socket.emit("Client-send-color","red");
+            });
+            $("#xanh").click(function(){
+                socket.emit("Client-send-color","blue");
+            });
+            $("#vang").click(function(){
+                socket.emit("Client-send-color","yellow");
+            });
         });
     </script>
     <title>Color Change Socket IO</title>
@@ -31,7 +42,9 @@
 
     </style>
 </head>
-<body bgcolor="pink">
-    <dir id="do"></dir>
-    <dir id="xanh"></dir>
-    <dir id="vang"></di
+<body bgColor="pink">
+    <div id="do"></div>
+    <div id="xanh"></div>
+    <div id="vang"></div>
+</body>
+</html>
